@@ -14,8 +14,6 @@
 // Run a randomizer for a computer that returns rock, paper, or scissor
 // Store the computer result
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice;
 
 function getComputerChoice() {
     let x =  Math.floor((Math.random() * 3) + 1);
@@ -29,31 +27,30 @@ function getComputerChoice() {
     return x;
 }
 
+// Investigate this function because it's not working
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === 'rock' && computerSelection === 'Scissors') {
-        alert('Rock beats Scissors. You win!');
+    if ((playerSelection = 'rock') && (computerSelection == 'Scissors')) {
+        alert('Rock beats Scissors. You win!'); 
+    } else if ((playerSelection = 'rock') && (computerSelection == 'Paper')) {
+        alert('Paper beats Rock. You Lose!');
+    } else if ((playerSelection = 'paper') && (computerSelection == 'Rock')) {
+        alert('Paper beats Rock. You win!'); 
+    } else if ((playerSelection = 'paper') && (computerSelection == 'Scissors')) {
+        alert('Scissors beats Paper. You lose!');
+    } else if ((playerSelection = 'scissors') && (computerSelection == 'Paper')) {
+        alert('Scissors beats Paper. You win!'); 
+    } else if ((playerSelection = 'scissors') && (computerSelection == 'Rock')) {
+        alert('Rock beats Scissors. You lose!');
+    } else if (playerSelection == computerSelection) {
+        alert('It\'s a tie! Start over!');
+    } else {
+        alert('Hey Bitch It\'s Not Working')
     }
 }
 
-// function playRound(playerSelection, computerSelection) {
-//     if (playerSelection === 'rock' && computerSelection === 'Scissors') {
-//         alert('Rock beats Scissors. You win!'); 
-//     } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
-//         alert('Paper beats Rock. You Lose!')
-//     } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
-//         alert('Paper beats Rock. You win!'); 
-//     } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
-//         alert('Scissors beats Paper. You lose!');
-//     } else if (playerSelection === 'scissors' && computerSelection === 'Paper') {
-//         alert('Scissors beats Paper. You win!'); 
-//     } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
-//         alert('Rock beats Scissors. You lose!');
-//     } else if (playerSelection == computerSelection) {
-//         alert('It\'s a tie! Start over!');
-//     } else {
-//         alert('Hey Bitch It\'s Not Working')
-//     }}
     
+    const playerSelection = 'rock';
+    const computerSelection = getComputerChoice;   
 
 console.log(computerSelection());
 console.log(playerSelection);
