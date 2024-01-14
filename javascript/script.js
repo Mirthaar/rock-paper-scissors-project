@@ -33,19 +33,14 @@ function getPlayerChoice() {
     let playerInput = prompt('Let\'s play a game! Type rock, paper, or scissors and try to beat the computer: "','');
     let playerChoice = playerInput.toLowerCase();
 
-    // CODE ISSUE: Cannot figure out why this if call will not store the new input of else
-        if (playerChoice == 'rock') {
-            playerChoice == 'rock';
-        } else if (playerChoice == 'paper') {
-            playerChoice == 'paper';
-        } else if (playerChoice == 'scissors') {  
-            playerChoice == 'scissors';
-        } else {
-            alert('Please select either Rock, Paper, or Scissors.');
-            // getPlayerChoice();
-        } 
-    
-    return playerChoice;
+    if ((playerChoice == 'rock') || 
+        (playerChoice == 'paper') || 
+        (playerChoice == 'scissors')) {  
+        return playerChoice;
+    } else {
+        alert('Please select either Rock, Paper, or Scissors.');
+        return getPlayerChoice();
+    } 
 }
 
 // Assign player and computer choices to new variables
