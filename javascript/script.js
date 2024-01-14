@@ -11,17 +11,22 @@
 
 // Give player three options, rock, paper, scissor
 // Get text input from user and store it
-// Run a randomizer for a computer that returns rock, paper, or scissor
 // Store the computer result
 // Define the winning combintations
 // Compare the result of the player and the computer
 // Return result to the player
 
-
+// Run a randomizer for a computer that returns rock, paper, or scissor
 function getComputerChoice() {
     let x =  Math.floor((Math.random() * 3) + 1);
+    if (x === 1) {
+        x = 'Rock';
+    } else if (x === 2) {
+        x = 'Paper';
+    } else {
+        x = 'Scissors';
+    }
     return x;
-
 }
 
 console.log(getComputerChoice());
