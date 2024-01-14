@@ -15,45 +15,64 @@
 // Store the computer result
 
 
+// Get a random result from the computer and store it in a variable
 function getComputerChoice() {
     let x =  Math.floor((Math.random() * 3) + 1);
     if (x === 1) {
-        x = 'Rock';
+        x = 'rock';
     } else if (x === 2) {
-        x = 'Paper';
+        x = 'paper';
     } else {
-        x = 'Scissors';
+        x = 'scissors';
     }
-    return x;
+    return String(x);
 }
 
-// Investigate this function because it's not working
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection = 'rock') && (computerSelection == 'Scissors')) {
-        alert('Rock beats Scissors. You win!'); 
-    } else if ((playerSelection = 'rock') && (computerSelection == 'Paper')) {
-        alert('Paper beats Rock. You Lose!');
-    } else if ((playerSelection = 'paper') && (computerSelection == 'Rock')) {
-        alert('Paper beats Rock. You win!'); 
-    } else if ((playerSelection = 'paper') && (computerSelection == 'Scissors')) {
-        alert('Scissors beats Paper. You lose!');
-    } else if ((playerSelection = 'scissors') && (computerSelection == 'Paper')) {
-        alert('Scissors beats Paper. You win!'); 
-    } else if ((playerSelection = 'scissors') && (computerSelection == 'Rock')) {
-        alert('Rock beats Scissors. You lose!');
-    } else if (playerSelection == computerSelection) {
-        alert('It\'s a tie! Start over!');
-    } else {
-        alert('Hey Bitch It\'s Not Working')
-    }
-}
+// Get a choice from the player
+function getPlayerChoice() {
+    let playerInput = prompt('Let\'s play a game! Type rock, paper, or scissors and try to beat the computer: "','');
+    let playerChoice = playerInput.toLowerCase();
 
+    // CODE ISSUE: Cannot figure out why this if call will not store the new input of else
+        if (playerChoice == 'rock') {
+            playerChoice == 'rock';
+        } else if (playerChoice == 'paper') {
+            playerChoice == 'paper';
+        } else if (playerChoice == 'scissors') {  
+            playerChoice == 'scissors';
+        } else {
+            alert('Please select either Rock, Paper, or Scissors.');
+            // getPlayerChoice();
+        } 
     
-    const playerSelection = 'rock';
-    const computerSelection = getComputerChoice;   
+    return playerChoice;
+}
 
-console.log(computerSelection());
+// Assign player and computer choices to new variables
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();   
+
+//Compare choices and run the game
+function playRound(playerSelection, computerSelection) {
+    
+    let response = '';
+    
+    if ((playerSelection === 'paper' && computerSelection === 'rock') ||
+       (playerSelection === 'rock' && computerSelection === 'scissors') ||
+       (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        return response += `You win! ${playerSelection} beats ${computerSelection}!`;
+       } else if ((playerSelection === 'paper' && computerSelection === 'scissors') ||
+                  (playerSelection === 'rock' && computerSelection === 'paper') ||
+                  (playerSelection === 'scissors' && computerSelection === 'rock')) {
+        return response += `You lose. :( - ${computerSelection} beats ${playerSelection}.`;
+       } else if (playerSelection === computerSelection) {
+        return response += 'It\'s a tie. Play again?';
+       } else {
+        return response += 'Error. Sorry John.';
+       }
+    }
+  
+
+console.log(computerSelection);
 console.log(playerSelection);
 console.log(playRound(playerSelection, computerSelection));
-
-
