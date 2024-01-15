@@ -15,6 +15,7 @@
 // Store the computer result
 
 
+
 function getComputerChoice() {
     let x =  Math.floor((Math.random() * 3) + 1);
     if (x === 1) {
@@ -43,27 +44,48 @@ function getPlayerChoice() {
 }
 
 // Assign player and computer choices to new variables
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice(); 
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice(); 
+
+// Assign starting score for beginning of game
+let playerScore = 0;
+let computerScore = 0;
+let draws = 0;
 
 //Compare choices and run the game
 function playRound(playerSelection, computerSelection) {
 
     let response = '';
 
-    if ((playerSelection === 'paper' && computerSelection === 'rock') ||
-        (playerSelection === 'rock' && computerSelection === 'scissors') ||
-        (playerSelection === 'scissors' && computerSelection === 'paper')) {
-        return response += `You win! ${playerSelection} beats ${computerSelection}!`;
-    } else if ((playerSelection === 'paper' && computerSelection === 'scissors') ||
-                (playerSelection === 'rock' && computerSelection === 'paper') ||
-                (playerSelection === 'scissors' && computerSelection === 'rock')) {
-        return response += `You lose. :( - ${computerSelection} beats ${playerSelection}.`;
+    if (playerSelection === 'paper' && computerSelection === 'rock'){
+        return response += 'You win! Paper beats Rock!';
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return response += 'You win! Rock beats Scissors!';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        return response += 'You win! Scissors beat Paper!';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        return response += 'You lose. Scissors beat paper.';
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        return response += 'You lose. Paper beats Rock.';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        return response += 'You lose. Rock beats Scissors.';
     } else if (playerSelection === computerSelection) {
-        return response += 'It\'s a tie. Play again?';
+        return response += 'It\'s a tie.';
     } 
 }
 
 console.log(computerSelection);
 console.log(playerSelection);
 console.log(playRound(playerSelection, computerSelection));
+
+
+// Figure out game function here
+
+function game() {
+    //code goes here
+}
+
+console.log(playerScore);
+console.log(computerScore);
+console.log(draws);
+
