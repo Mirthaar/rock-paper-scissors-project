@@ -64,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         return response += 'You win! Scissors beat Paper!';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return response += 'You lose. Scissors beat paper.';
+        return response += 'You lose. Scissors beat Paper.';
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         return response += 'You lose. Paper beats Rock.';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
@@ -85,7 +85,22 @@ function game() {
     //code goes here
 }
 
-console.log(playerScore);
-console.log(computerScore);
+// ----- Testing the logic to add one point if player wins
+let roundResult = playRound(playerSelection, computerSelection);
+if ((roundResult == 'You win! Paper beats Rock!') ||
+    (roundResult == 'You win! Rock beats Scissors!') ||
+    (roundResult == 'You win! Scissors beat Paper!')) {
+    playerScore++;
+} else if ((roundResult == 'You lose. Scissors beat Paper.') ||
+    (roundResult == 'You lose. Paper beats Rock.') ||
+    (roundResult == 'You lose. Rock beats Scissors.')) {
+    computerScore++;
+    } else {
+        draws++;
+    }
+// ----- End Testing
+
+console.log(`Your current score is ${playerScore}.`);
+console.log(`The computer's current score is ${computerScore}.`);
 console.log(draws);
 
