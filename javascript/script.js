@@ -30,7 +30,9 @@ function game() {
     while (rounds < 5) {
         
         let playerSelection = getPlayerChoice();
+        console.log(`The player selected ${playerSelection}.`);
         let computerSelection = getComputerChoice();
+        console.log(`The computer selected ${computerSelection}`);
         let roundResult = playRound(playerSelection, computerSelection);
         
         if ((roundResult == 'You win! Paper beats Rock!') ||
@@ -47,7 +49,7 @@ function game() {
         
         rounds++;
         alert(`Round: ${rounds}\n------------\nThe current score is:\nYou: ${playerScore}\nComputer: ${computerScore}`);
-        console.log(`Round: ${rounds}\n----\nThe current score is -\n You: ${playerScore}\nComputer: ${computerScore}`);
+        console.log(`Round: ${rounds}\n----\nThe current score is -\nYou: ${playerScore}\nComputer: ${computerScore}`);
         
     }
 
