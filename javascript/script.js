@@ -55,8 +55,8 @@ function game() {
         alert(`Game Over! You win!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
         console.log(`Game Over! You win!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
     } else if (playerScore < computerScore) {
-        alert(`Game Over! You lose!\nFinal Score:\nYou: ${computerScore}\nComputer: ${playerScore}`);
-        console.log(`Game Over! You lose!\nFinal Score:\nYou: ${computerScore}\nComputer: ${playerScore}`);
+        alert(`Game Over! You lose!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
+        console.log(`Game Over! You lose!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
     } else if (playerScore === computerScore) {
         alert(`Game Over! It's a tie!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
         console.log(`Game Over! It's a tie!\nFinal Score:\nYou: ${playerScore}\nComputer: ${computerScore}`);
